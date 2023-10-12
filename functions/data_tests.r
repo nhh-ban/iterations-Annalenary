@@ -5,7 +5,7 @@
 # All tests are packed in a function test_stations_metadata that apples
 # all the aforementioned tests
 
-test_stations_metadata_colnames <-
+test_stations_metadata_colnames <- #tests whether the created dataframe has the right column names
   function(df) {
     
     expected_colnames <- c("id", "name", "latestData", "lat", "lon")
@@ -17,7 +17,7 @@ test_stations_metadata_colnames <-
     }
   }
 
-test_stations_metadata_nrows <-
+test_stations_metadata_nrows <- #tests whether the data frame has the correct number of rows and none are missing
   function(df) {
     
     min_expected_rows <- 5000
@@ -32,7 +32,7 @@ test_stations_metadata_nrows <-
     }
   }
 
-test_stations_metadata_coltypes <-
+test_stations_metadata_coltypes <- # tests whether the column have the correct data type
   function(df) {
     expected_coltypes <-
       c("character", "character", "double", "double", "double")
@@ -45,7 +45,7 @@ test_stations_metadata_coltypes <-
     }
   }
   
-test_stations_metadata_nmissing <-
+test_stations_metadata_nmissing <- #tests whether there are too many values missing
   function(df) {
     max_miss_vals <- 200
     
@@ -56,7 +56,7 @@ test_stations_metadata_nmissing <-
     }
   }
 
-test_stations_metadata_latestdata_timezone <-
+test_stations_metadata_latestdata_timezone <- # tests whether data is in the correct time zon
   function(df) {
     
     if (attr(df$latestData,"tzone")=="UTC") {
@@ -67,7 +67,7 @@ test_stations_metadata_latestdata_timezone <-
   }
 
 
-test_stations_metadata <- 
+test_stations_metadata <- #applies all functions to the data set
   function(df){
     test_stations_metadata_colnames(df)
     test_stations_metadata_coltypes(df)
