@@ -27,12 +27,8 @@ to_iso8601<-function(date,offset){
 }
 to_iso8601(as_datetime("2016-09-01 10:11:12"),-4)
 
-
-
-
-
-
-
+#Task 5:
+#i didnt manage to transform the data into a dataframe
 
 
 
